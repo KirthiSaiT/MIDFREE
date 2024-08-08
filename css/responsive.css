@@ -1,0 +1,188 @@
+@media(max-width:480px)
+{
+	.mentor h1 a{
+	color:red;
+	}
+	
+	.col-7{
+	display:none;}
+	.btn{
+	text-align:end;}
+	.align{
+	display:inline-block;}
+	.or2{
+		
+	order:2;}
+	.or1{
+		
+	order:1;}
+	.choose-cnt{
+	margin:10px 0;}
+	.cours{
+	margin:10px 0;}
+	.last-Content{
+	margin:10px 0;}
+	
+	.colsm-1
+{
+	width:8.33%;
+	padding:0 15px;
+}
+.colsm-2
+{
+	width:16.66%;
+	padding:0 15px;
+}
+.colsm-3
+{
+	width:25%;
+	padding:0 15px;
+}
+.colsm-4
+{
+	width:33.33%;
+	padding:0 15px;
+}
+.colsm-5
+{
+	width:41.66%;
+	padding:0;
+}
+.colsm-6
+{
+	width:50%;
+	padding:0 15px;
+}
+.colsm-7
+{
+	width:58.33%;
+	padding:0;
+}
+.colsm-8
+{
+	width:66.66%;
+	padding:0 15px;
+}
+.colsm-9
+{
+	width:75%;
+	padding:0 15px;
+}
+.colsm-10
+{
+	width:83.33%;
+	padding:0 15px;
+}
+.colsm-11
+{
+	width:91.66%;
+	padding:0 15px;
+}
+.colsm-12
+{
+	width:100%;
+	padding:0 15px;
+}
+.cours-title h3{
+	position:relative;}
+	.cours-title h3::after{
+		content:"";
+		position:absolute;
+		top:45%;
+		left:23%;
+		border:1px solid #5fcf80;
+	width:100px;}
+	.container{
+	width:100%;}
+}
+@media(min-width:517px) and (max-width:992px)
+{
+.col-7{
+	display:none;}
+	.btn{
+	text-align:end;}
+	.align{
+	display:inline-block;}
+	.cours-title h3{
+	position:relative;}
+	.cours-title h3::after{
+		content:"";
+		position:absolute;
+		top:45%;
+		left:10%;
+		border:1px solid #5fcf80;
+	width:100px;}
+	.or2{
+		
+	order:2;}
+	.or1{
+		
+	order:1;}
+	.choose-cnt{
+	margin:10px 0;}
+	.cours{
+	margin:10px 0;}
+	.last-Content{
+	margin:10px 0;}
+	
+	.colpa-1
+{
+	width:8.33%;
+	padding:0 15px;
+}
+.colpa-2
+{
+	width:16.66%;
+	padding:0 15px;
+}
+.colpa-3
+{
+	width:25%;
+	padding:0 15px;
+}
+.colpa-4
+{
+	width:33.33%;
+	padding:0 15px;
+}
+.colpa-5
+{
+	width:41.66%;
+	padding:0;
+}
+.colpa-6
+{
+	width:50%;
+	padding:0 15px;
+}
+.colpa-7
+{
+	width:58.33%;
+	padding:0;
+}
+.colpa-8
+{
+	width:66.66%;
+	padding:0 15px;
+}
+.colpa-9
+{
+	width:75%;
+	padding:0 15px;
+}
+.colpa-10
+{
+	width:83.33%;
+	padding:0 15px;
+}
+.colpa-11
+{
+	width:91.66%;
+	padding:0 15px;
+}
+.colpa-12
+{
+	width:100%;
+	padding:0 15px;
+}
+}

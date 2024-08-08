@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100 flex flex-col items-center min-h-screen">
+    <header class="w-full bg-white shadow-md">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-blue-600">
+          <a href="home.html">MIDFREE</a>
+        </div>
+        <nav>
+          <ul class="flex space-x-4">
+            <li>
+              <a
+                href="home.html"
+                class="text-gray-700 hover:text-blue-600 transition duration-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="therapy.html"
+                class="text-gray-700 hover:text-blue-600 transition duration-300"
+                >Therapy</a
+              >
+            </li>
+            <li>
+              <a
+                href="ngo.html"
+                class="text-gray-700 hover:text-blue-600 transition duration-300"
+                >NGO</a
+              >
+            </li>
+            <li>
+              <a
+                href="mentor.html"
+                class="text-gray-700 hover:text-blue-600 transition duration-300"
+                >Mentor</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-gray-700 hover:text-blue-600 transition duration-300"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="flex-1 flex items-center justify-center p-6 w-max-lg">
+      <div
+        class=" bg-white shadow-lg rounded-lg p-8 animate-fadeIn w-full"
+      >
+        <form onsubmit="sendEmail(); reset(); return false;">
+          <h3 class="text-2xl font-semibold text-center mb-6">GET IN TOUCH</h3>
+          <div class="mb-4">
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div class="mb-4">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email id"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div class="mb-4">
+            <input
+              type="text"
+              id="phone"
+              placeholder="Phone no"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div class="mb-6">
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="How can we help you?"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="w-full p-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeQBt6izwfAf1_d2CKmDdmbrrfIJTL1ds",
+        authDomain: "mid-free-final.firebaseapp.com",
+        projectId: "mid-free-final",
+        storageBucket: "mid-free-final.appspot.com",
+        messagingSenderId: "673814398090",
+        appId: "1:673814398090:web:131e5084ba7fc7cc131973",
+        measurementId: "G-XXW8H07DLQ",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        set(ref(db, "user/" + document.getElementById("name").value), {
+          username: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          PhoneNumber: document.getElementById("phone").value,
+          message: document.getElementById("message").value,
+        });
+        alert("Message Sent Successfully!");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Firebase Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <section class="w-full max-w-md p-8 bg-white shadow-md rounded-lg">
+      <div class="mb-6 text-center">
+        <h2 class="text-2xl font-semibold">Login Form</h2>
+      </div>
+      <form id="loginForm">
+        <div class="mb-4">
+          <label for="username" class="block text-sm font-medium text-gray-700"
+            >Username</label
+          >
+          <input
+            type="text"
+            id="username"
+            required
+            class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700"
+            >E-mail</label
+          >
+          <input
+            type="email"
+            id="email"
+            required
+            class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div class="mb-6">
+          <label for="phone" class="block text-sm font-medium text-gray-700"
+            >Phone Number</label
+          >
+          <input
+            type="text"
+            id="phone"
+            required
+            class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <input
+            type="submit"
+            value="Submit"
+            id="submit"
+            class="w-full p-2 bg-blue-600 text-white font-semibold rounded-md cursor-pointer hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+          />
+        </div>
+      </form>
+    </section>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeQBt6izwfAf1_d2CKmDdmbrrfIJTL1ds",
+        authDomain: "mid-free-final.firebaseapp.com",
+        projectId: "mid-free-final",
+        storageBucket: "mid-free-final.appspot.com",
+        messagingSenderId: "673814398090",
+        appId: "1:673814398090:web:131e5084ba7fc7cc131973",
+        measurementId: "G-XXW8H07DLQ",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      document.getElementById("submit").addEventListener("click", function (e) {
+        e.preventDefault();
+        set(ref(db, "user/" + document.getElementById("username").value), {
+          username: document.getElementById("username").value,
+          email: document.getElementById("email").value,
+          PhoneNumber: document.getElementById("phone").value,
+        });
+        alert("Login Successful!");
+      });
+    </script>
+  </body>
+</html>

@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Additional custom styles if needed */
+    @font-face {
+      font-family: 'Raleway';
+      src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+    }
+  </style>
 </head>
 <body class="bg-gray-100 font-raleway">
   <!-- Navbar -->
   <header class="bg-white shadow-md">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
       <div class="text-2xl font-bold text-blue-600">
         <a href="home.html">MIDFREE</a>
       </div>
       <nav>
-        <ul class="flex space-x-6">
+        <ul class="flex flex-wrap space-x-6 text-base"> <!-- Changed text-sm to text-base -->
           <li><a class="text-gray-600 hover:text-blue-600" href="home.html">Home</a></li>
           <li><a class="text-gray-600 hover:text-blue-600" href="therapy.html">Therapy</a></li>
           <li><a class="text-gray-600 hover:text-blue-600" href="ngo.html">NGO</a></li>
@@ -27,36 +34,36 @@
 
   <!-- Contact Section -->
   <section class="py-12 px-4">
-    <div class="container mx-auto bg-white p-8 rounded-lg shadow-lg">
-      <h1 class="text-4xl font-bold text-center text-blue-600 mb-8">Contact</h1>
-      <h3 class="text-lg text-center text-gray-700 mb-8">Contact us for the best design solutions</h3>
+    <div class="container mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+      <h1 class="text-3xl sm:text-4xl font-bold text-center text-blue-600 mb-6 sm:mb-8">Contact</h1>
+      <h3 class="text-md sm:text-lg text-center text-gray-700 mb-6 sm:mb-8">Contact us for immediate mentorship and guardianship</h3>
       
       <form class="space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input type="text" id="name" class="w-full p-4 border rounded-lg" placeholder="Your Name *">
-          <input type="email" id="email" class="w-full p-4 border rounded-lg" placeholder="Your Email *">
+          <input type="text" id="name" class="w-full p-4 border rounded-lg" placeholder="Your Name *" required>
+          <input type="email" id="email" class="w-full p-4 border rounded-lg" placeholder="Your Email *" required>
         </div>
         <div class="grid grid-cols-1 gap-6">
-          <input type="tel" id="phone" class="w-full p-4 border rounded-lg" placeholder="Your Phone *">
-          <textarea id="message" class="w-full p-4 border rounded-lg" rows="5" placeholder="Message *"></textarea>
+          <input type="tel" id="phone" class="w-full p-4 border rounded-lg" placeholder="Your Phone *" required>
+          <textarea id="message" class="w-full p-4 border rounded-lg" rows="5" placeholder="Message *" required></textarea>
         </div>
         <div class="text-center">
           <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">Send Message</button>
         </div>
       </form>
 
-      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div class="bg-gray-100 p-6 rounded-lg">
           <h3 class="text-lg font-semibold text-blue-600 mb-2">Contact Info</h3>
-          <p class="text-gray-700">E-mail: niloy.swe@gmail.com</p>
-          <p class="text-gray-700">Mobile: +8801756770501</p>
-          <p class="text-gray-700">Web: <a href="https://about.me/niloy-biswas" class="text-blue-500 hover:underline">about.me/niloy-biswas</a></p>
+          <p class="text-gray-700">E-mail: <a href="mailto:niloy.swe@gmail.com" class="text-blue-500 hover:underline">kirtcy015@rmkcet.ac.in</a></p>
+          <p class="text-gray-700">Mobile: <a href="tel:+8801756770501" class="text-blue-500 hover:underline">+8801756770501</a></p>
+          <p class="text-gray-700">Web: <a href="https://midfreee.netlify.app/" class="text-blue-500 hover:underline" target="_blank">about.me/niloy-biswas</a></p>
         </div>
         <div class="bg-gray-100 p-6 rounded-lg">
           <h3 class="text-lg font-semibold text-blue-600 mb-2">Working Hours: 9am-4pm</h3>
-          <p class="text-gray-700">E-mail: mahi@gmail.com</p>
-          <p class="text-gray-700">Mobile: +8801824141501</p>
-          <p class="text-gray-700">Web: <a href="https://about.me/mahi.swe" class="text-blue-500 hover:underline">about.me/mahi.swe</a></p>
+          <p class="text-gray-700">E-mail: <a href="mailto:mahi@gmail.com" class="text-blue-500 hover:underline">kirthisai251@gmail.com</a></p>
+          <p class="text-gray-700">Mobile: <a href="tel:+8801824141501" class="text-blue-500 hover:underline">+8801824141501</a></p>
+          <p class="text-gray-700">Web: <a href="https://midfreee.netlify.app/" class="text-blue-500 hover:underline" target="_blank">about.me/mahi.swe</a></p>
         </div>
       </div>
     </div>
@@ -94,5 +101,17 @@
       });
     });
   </script>
+   <script>
+    window.embeddedChatbotConfig = {
+      chatbotId: "0NRyVLtcl8WDWqB4Z8stK",
+      domain: "www.chatbase.co",
+    };
+  </script>
+  <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="0NRyVLtcl8WDWqB4Z8stK"
+    domain="www.chatbase.co"
+    defer
+  ></script>
 </body>
 </html>

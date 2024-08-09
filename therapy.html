@@ -16,18 +16,68 @@
     />
     <title>THERAPY</title>
     <style>
-      
+      /* Custom Alignment */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-appointment-button {
+  margin-top: 30px;
+}
+
+.discover-button {
+  margin-top: 10px; /* Adjusted margin-top to move the button higher */
+}
+
+      #specialists {
+  text-align: center; /* Center aligns the content in the section */
+}
+
+/* Style for the Discover button */
+.discover-button {
+  margin-top: 0; /* Adjust the top margin to move the button up */
+}
+      /* Button Styles */
+      button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      button:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+     
+      @media (max-width: 768px) {
+        button {
+          width: 100%;
+          margin-top: 15px;
+          padding: 15px;
+        }
+      }
+
       /* Modal Styles */
       .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1000; 
+        display: none;
+        position: fixed;
+        z-index: 1000;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        overflow: auto; 
-        background-color: rgba(0, 0, 0, 0.4); 
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
       }
 
       .modal-content {
@@ -35,7 +85,7 @@
         margin: 5% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 90%; 
+        width: 90%;
         max-width: 800px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
@@ -98,6 +148,21 @@
         color: gold;
         font-size: 1rem;
       }
+
+      /* Custom Alignment */
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .book-appointment-button {
+        margin-top: 30px;
+      }
+
+      .discover-button {
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body class="bg-gray-100">
@@ -146,13 +211,14 @@
         <p class="text-gray-700 mt-4">
           MIDFREE will help you find the right professional for you
         </p>
-        
-        <button
-          class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 mb-10"
-          onclick="openModal()"
-        >
-          Book An Appointment
-        </button>
+        <div class="button-container">
+          <button
+            class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 book-appointment-button "
+            onclick="openModal()"
+          >
+            Book An Appointment
+          </button>
+        </div>
       </div>
     </section>
 
@@ -189,15 +255,19 @@
 
     <section class="bg-blue-100 py-20 px-4" id="specialists">
       <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-10">
+        <h2 class="text-3xl font-bold mb-4 ">
           Get Treatment From Our Specialists
         </h2>
-        <button
-          class="mt-10 px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transform transition-transform duration-300 ease-in-out hover:scale-105"
+        <div class="button-container">
+          <button
+          class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transform transition-transform duration-300 ease-in-out discover-button mb-8"
           onclick="openModal()"
         >
           Discover
         </button>
+        
+        
+        </div>
         
         <div class="flex flex-wrap justify-center">
           <div class="w-full md:w-1/3 px-4 mb-8">
@@ -224,108 +294,48 @@
             />
             <h3 class="text-xl font-bold">Dr. M.D. Kumaresh</h3>
             <p class="text-gray-600">
-              M.B.B.S., Govt. Stanley Medical College, General Physician
+              M.D. Psychiatrist, working in Chennai.
             </p>
             <button
               class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700"
             >
-              <a href="mailto:kirthisai251@gmail.com">CONTACT</a>
+              <a href="mailto:dr.kumaresh@example.com">CONTACT</a>
             </button>
           </div>
           <div class="w-full md:w-1/3 px-4 mb-8">
             <img
               class="w-48 h-48 object-cover rounded-full mx-auto mb-4"
               src="./images/sashdoc.jpg"
-                            alt="Chandra Sekar"
+              alt="Srinivasan"
             />
-            <h3 class="text-xl font-bold">Chandra Sekar</h3>
+            <h3 class="text-xl font-bold">Srinivasan</h3>
             <p class="text-gray-600">
-              Neurosurgeon, working for more than 6 years at Royapetta GH
+              Clinical Psychologist, practicing at Neurocare Clinic.
             </p>
             <button
               class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700"
             >
-              <a href="mailto:kirthisai251@gmail.com">CONTACT</a>
+              <a href="mailto:srinivasan@example.com">CONTACT</a>
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="bg-gray-800 py-6 text-white">
-      <div class="text-center">
-        <p class="text-sm">
-          &copy; 2024 MIDFREE. All rights reserved. | Designed by Kirthi Sai
+    <!-- Modal for Booking -->
+    
+
+    <!-- Footer -->
+    <footer class="bg-white py-6 shadow-inner">
+      <div class="container mx-auto text-center">
+        <p class="text-gray-600">
+          &copy; 2024 MIDFREE. All rights reserved.
         </p>
       </div>
     </footer>
 
-    <!-- Modal -->
-    <div id="bookingModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2 class="text-2xl font-bold mb-4">Book An Appointment</h2>
-        <div class="card-container">
-          <!-- Card 1 -->
-          <div class="card">
-            <img src="./images/therapist1.jpg" alt="Therapist 1" />
-            <h3>Dr. Anitha Nair</h3>
-            <p>Psychiatrist</p>
-            <p><a href="mailto:anitha@example.com">anitha@example.com</a></p>
-            <p class="rating">★★★★★</p>
-          </div>
-          <!-- Card 2 -->
-          <div class="card">
-            <img src="./images/therapist2.jpg" alt="Therapist 2" />
-            <h3>Dr. Ravi Kumar</h3>
-            <p>Clinical Psychologist</p>
-            <p><a href="mailto:ravi@example.com">ravi@example.com</a></p>
-            <p class="rating">★★★★☆</p>
-          </div>
-          <!-- Card 3 -->
-          <div class="card">
-            <img src="./images/therapist3.jpg" alt="Therapist 3" />
-            <h3>Dr. Priya Singh</h3>
-            <p>Counseling Psychologist</p>
-            <p><a href="mailto:priya@example.com">priya@example.com</a></p>
-            <p class="rating">★★★★★</p>
-          </div>
-          <!-- Card 4 -->
-          <div class="card">
-            <img src="./images/therapist4.jpg" alt="Therapist 4" />
-            <h3>Dr. Arun Sharma</h3>
-            <p>Behavioral Therapist</p>
-            <p><a href="mailto:arun@example.com">arun@example.com</a></p>
-            <p class="rating">★★★★☆</p>
-          </div>
-          <!-- Card 5 -->
-          <div class="card">
-            <img src="./images/therapist5.jpg" alt="Therapist 5" />
-            <h3>Dr. Meera Gupta</h3>
-            <p>Child Psychologist</p>
-            <p><a href="mailto:meera@example.com">meera@example.com</a></p>
-            <p class="rating">★★★★★</p>
-          </div>
-          <!-- Card 6 -->
-          <div class="card">
-            <img src="./images/therapist6.jpg" alt="Therapist 6" />
-            <h3>Dr. Vishal Patel</h3>
-            <p>Marriage Counselor</p>
-            <p><a href="mailto:vishal@example.com">vishal@example.com</a></p>
-            <p class="rating">★★★★☆</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <script>
-      function openModal() {
-        document.getElementById("bookingModal").style.display = "block";
-      }
-
-      function closeModal() {
-        document.getElementById("bookingModal").style.display = "none";
-      }
+    
     </script>
   </body>
 </html>

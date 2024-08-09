@@ -586,23 +586,22 @@
     
     <script>
       // Function to open the modal
-      function openModal() {
-        document.getElementById('appointmentModal').style.display = 'block';
-      }
-    
-      // Function to close the modal
-      function closeModal() {
-        document.getElementById('appointmentModal').style.display = 'none';
-      }
-    
-      // Close the modal when clicking outside the modal content
-      window.onclick = function(event) {
-        if (event.target === document.getElementById('appointmentModal')) {
-          closeModal();
-        }
-      }
+function openModal() {
+  document.getElementById('appointmentModal').style.display = 'block';
+}
 
-      // Function to open the booking modal
+// Function to close the modal
+function closeModal() {
+  document.getElementById('appointmentModal').style.display = 'none';
+}
+
+// Close the modal when clicking outside the modal content
+window.onclick = function(event) {
+  if (event.target === document.getElementById('appointmentModal')) {
+    closeModal();
+  }
+}
+// Function to open the booking modal
 function openBookingModal(name, email) {
   document.getElementById('specialistName').value = name;
   document.getElementById('specialistEmail').value = email;
@@ -614,7 +613,23 @@ function closeBookingModal() {
   document.getElementById('bookingModal').style.display = 'none';
 }
 
-// Close the modal when clicking outside the modal content
+// Handle form submission
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Display the thank you message
+  document.getElementById('confirmationMessage').innerText =
+    'Thanks for booking, you will be contacted shortly.';
+
+  // Close the booking modal
+  closeBookingModal();
+
+  // Optionally, you can reset the form fields here
+  this.reset();
+});
+
+
+// Close the booking modal when clicking outside the modal content
 window.onclick = function(event) {
   if (event.target === document.getElementById('bookingModal')) {
     closeBookingModal();
@@ -625,9 +640,14 @@ window.onclick = function(event) {
 document.getElementById('bookingForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the default form submission
 
-  // Display the confirmation message
+  // Display the thank you message
   document.getElementById('confirmationMessage').innerText =
-    'Your appointment has been booked. You will be contacted shortly.';
+    'Thanks for booking, you will be contacted shortly.';
+
+  // Close the booking modal after a short delay
+  setTimeout(() => {
+    closeBookingModal();
+  }, 2000); // Adjust the delay as needed (2000 ms = 2 seconds)
 
   // Optionally, you can reset the form fields here
   this.reset();

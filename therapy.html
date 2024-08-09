@@ -220,6 +220,58 @@
           </button>
         </div>
       </div>
+      <!-- Modal for Booking -->
+<div id="appointmentModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 class="text-2xl font-bold mb-4">Select a Specialist</h2>
+    <div class="card-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/100" alt="Specialist 1" />
+        <h3>Dr. Alice Smith</h3>
+        <p>Clinical Psychologist</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/100" alt="Specialist 2" />
+        <h3>John Doe</h3>
+        <p>Marriage Counselor</p>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/100" alt="Specialist 3" />
+        <h3>Dr. Emily Johnson</h3>
+        <p>Psychiatrist</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/100" alt="Specialist 4" />
+        <h3>Michael Brown</h3>
+        <p>Behavioral Therapist</p>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/100" alt="Specialist 5" />
+        <h3>Sarah Wilson</h3>
+        <p>Family Therapist</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+      <!-- Card 6 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/100" alt="Specialist 6" />
+        <h3>Dr. James Lee</h3>
+        <p>Clinical Social Worker</p>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </section>
 
     <section class="py-10">
@@ -321,6 +373,25 @@
         </div>
       </div>
     </section>
+    <script>
+      // Function to open the modal
+      function openModal() {
+        document.getElementById('appointmentModal').style.display = 'block';
+      }
+    
+      // Function to close the modal
+      function closeModal() {
+        document.getElementById('appointmentModal').style.display = 'none';
+      }
+    
+      // Close the modal when clicking outside the modal content
+      window.onclick = function(event) {
+        if (event.target === document.getElementById('appointmentModal')) {
+          closeModal();
+        }
+      }
+    </script>
+    
 
     <!-- Modal for Booking -->
     

@@ -353,56 +353,57 @@
         </div>
       </div>
       <!-- Modal for Booking -->
-<div id="appointmentModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2 class="text-2xl font-bold mb-4">Select a Specialist</h2>
-    <div class="card-container">
-      <!-- Card 1 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/100" alt="Specialist 1" />
-        <h3>Dr. Alice Smith</h3>
-        <p>Clinical Psychologist</p>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
+      <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2 class="text-2xl font-bold mb-4">Select a Specialist</h2>
+          <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+              <img src="./images/suhan.jpg" alt="Specialist 1" />
+              <h3>Dr.Suhan</h3>
+              <p>MBBS</p>
+              <button class="book-button" onclick="openBookingModal('Dr. Suhan')">Book</button>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+              <img src="./images/hemanthdoc.jpg" alt="Specialist 2" />
+              <h3>Dr.Kumaresh</h3>
+              <p>M.D. Psychiatrist</p>
+              <button class="book-button" onclick="openBookingModal('Dr. Kumaresh')">Book</button>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+              <img src="./images/sashdoc.jpg" alt="Specialist 3" />
+              <h3>Dr.Srinivasan</h3>
+              <p>Clinical Psychologist</p>
+              <button class="book-button" onclick="openBookingModal('Dr. Srinivasan')">Book</button>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+              <img src="./images/narendoc.jpg" alt="Specialist 4" />
+              <h3>Narendran</h3>
+              <p>trainee at Stanley College</p>
+              <button class="book-button" onclick="openBookingModal('Narendran')">Book</button>
+            </div>
+            <!-- Card 5 -->
+            <div class="card">
+              <img src="./images/vemkatdoc.jpg" alt="Specialist 5" />
+              <h3>Venkat</h3>
+              <p>Trainee</p>
+              <button class="book-button" onclick="openBookingModal('Venkat')">Book</button>
+            </div>
+            <!-- Card 6 -->
+            <div class="card">
+              <img src="./images/rajadoc.jpg" alt="Specialist 6" />
+              <h3>Raja</h3>
+              <p>Trainee</p>
+              <button class="book-button" onclick="openBookingModal('Raja')">Book</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- Card 2 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/100" alt="Specialist 2" />
-        <h3>John Doe</h3>
-        <p>Marriage Counselor</p>
-        <div class="rating">⭐⭐⭐⭐</div>
-      </div>
-      <!-- Card 3 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/100" alt="Specialist 3" />
-        <h3>Dr. Emily Johnson</h3>
-        <p>Psychiatrist</p>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-      </div>
-      <!-- Card 4 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/100" alt="Specialist 4" />
-        <h3>Michael Brown</h3>
-        <p>Behavioral Therapist</p>
-        <div class="rating">⭐⭐⭐⭐</div>
-      </div>
-      <!-- Card 5 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/100" alt="Specialist 5" />
-        <h3>Sarah Wilson</h3>
-        <p>Family Therapist</p>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-      </div>
-      <!-- Card 6 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/100" alt="Specialist 6" />
-        <h3>Dr. James Lee</h3>
-        <p>Clinical Social Worker</p>
-        <div class="rating">⭐⭐⭐⭐</div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
     </section>
 
@@ -585,73 +586,7 @@
     </section>
     
     <script>
-      // Function to open the modal
-function openModal() {
-  document.getElementById('appointmentModal').style.display = 'block';
-}
 
-// Function to close the modal
-function closeModal() {
-  document.getElementById('appointmentModal').style.display = 'none';
-}
-
-// Close the modal when clicking outside the modal content
-window.onclick = function(event) {
-  if (event.target === document.getElementById('appointmentModal')) {
-    closeModal();
-  }
-}
-// Function to open the booking modal
-function openBookingModal(name, email) {
-  document.getElementById('specialistName').value = name;
-  document.getElementById('specialistEmail').value = email;
-  document.getElementById('bookingModal').style.display = 'block';
-}
-
-// Function to close the booking modal
-function closeBookingModal() {
-  document.getElementById('bookingModal').style.display = 'none';
-}
-
-// Handle form submission
-document.getElementById('bookingForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Display the thank you message
-  document.getElementById('confirmationMessage').innerText =
-    'Thanks for booking, you will be contacted shortly.';
-
-  // Close the booking modal
-  closeBookingModal();
-
-  // Optionally, you can reset the form fields here
-  this.reset();
-});
-
-
-// Close the booking modal when clicking outside the modal content
-window.onclick = function(event) {
-  if (event.target === document.getElementById('bookingModal')) {
-    closeBookingModal();
-  }
-}
-
-// Handle form submission
-document.getElementById('bookingForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Display the thank you message
-  document.getElementById('confirmationMessage').innerText =
-    'Thanks for booking, you will be contacted shortly.';
-
-  // Close the booking modal after a short delay
-  setTimeout(() => {
-    closeBookingModal();
-  }, 2000); // Adjust the delay as needed (2000 ms = 2 seconds)
-
-  // Optionally, you can reset the form fields here
-  this.reset();
-});
 
     </script>
     
@@ -671,6 +606,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
     <script>
     
     </script>
+    <script src="./js/therapy.js"></script>
   </body>
 </html>
 

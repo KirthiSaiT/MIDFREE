@@ -13,6 +13,29 @@
       rel="stylesheet"
     />
     <title>MENTOR</title>
+    <style>
+      
+      /* Additional styles for the modal */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 100%;
+      }
+    </style>
   </head>
   <body class="font-raleway">
     <header class="bg-white shadow-md">
@@ -40,11 +63,16 @@
         <p class="text-xl font-bold">
           Our Midfree team helps you to connect better!
         </p>
+        <div class="absolute top-11 right-4 bg-blue-500 text-white rounded-full w-20 h-20 flex items-center justify-center border-2 border-white z-50">
+          <span class="text-sm font-bold text-white">mentors</span>
+        </div>
         <a
           href="#"
           class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600"
+          onclick="openModal()"
           >Free Mentorship</a
         >
+       
       </div>
     </section>
 
@@ -104,7 +132,7 @@
             tool for helping people with anxiety and depression.
           </p>
           <a
-            href="#"
+            href="https://www.penguinrandomhouse.com/the-read-down/self-help-books-on-mental-health/" target="_blank"
             class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 w-48"
             >Learn More</a
           >
@@ -181,60 +209,86 @@
             >STRESS</a
           >
         </div>
-        <div class="bg-white p-6 rounded shadow-md">
-          <i class="fa fa-dot-circle-o text-3xl"></i>
-          <a
-            href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2568977/"
-            class="text-xl font-bold mt-4 block hover:underline"
-            >SCHIZOPHRENIA</a
-          >
-        </div>
-        <div class="bg-white p-6 rounded shadow-md">
-          <i class="bi bi-newspaper text-3xl"></i>
-          <a
-            href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5353243/"
-            class="text-xl font-bold mt-4 block hover:underline"
-            >BIPOLAR DISORDER</a
-          >
-        </div>
-        <div class="bg-white p-6 rounded shadow-md">
-          <i class="fa fa-home text-3xl"></i>
-          <a
-            href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5928080/"
-            class="text-xl font-bold mt-4 block hover:underline"
-            >AUTISM</a
-          >
-        </div>
-        <div class="bg-white p-6 rounded shadow-md">
-          <i class="fa fa-pencil text-3xl"></i>
-          <a
-            href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC181058/"
-            class="text-xl font-bold mt-4 block hover:underline"
-            >ADHD</a
-          >
-        </div>
       </div>
     </section>
 
-    <footer class="bg-gray-800 py-6 text-white text-center">
-      <div class="container mx-auto">
-        <p class="text-sm">
-          &copy; 2024 MIDFREE. All rights reserved. | Designed by kirthi sai
-        </p>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2 class="text-2xl font-bold mb-4">Book Your Free Mentorship</h2>
+        <form id="modal-form">
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium mb-2">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full px-3 py-2 border border-gray-300 rounded"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium mb-2">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-3 py-2 border border-gray-300 rounded"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-sm font-medium mb-2">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-3 py-2 border border-gray-300 rounded"
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            onclick="closeModal()"
+            class="ml-4 bg-gray-300 text-gray-800 px-6 py-3 rounded hover:bg-gray-400"
+          >
+            Close
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+        <p class="text-sm">© 2024 MIDFREE. All rights reserved.</p>
       </div>
     </footer>
 
     <script>
-      window.embeddedChatbotConfig = {
-        chatbotId: "0NRyVLtcl8WDWqB4Z8stK",
-        domain: "www.chatbase.co",
-      };
+      // JavaScript for handling modal
+     // JavaScript for handling modal
+function openModal() {
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+
+document.getElementById('modal-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  closeModal();
+  setTimeout(function () {
+    alert('Thank you for booking a free mentorship session. We will get contact you soon .');
+  }, 300); // Adjust the delay time if needed
+});
+
     </script>
-    <script
-      src="https://www.chatbase.co/embed.min.js"
-      chatbotId="0NRyVLtcl8WDWqB4Z8stK"
-      domain="www.chatbase.co"
-      defer
-    ></script>
   </body>
 </html>

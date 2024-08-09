@@ -14,7 +14,7 @@
     />
     <title>MENTOR</title>
     <style>
-      
+
       /* Additional styles for the modal */
       .modal {
         position: fixed;
@@ -63,9 +63,13 @@
         <p class="text-xl font-bold">
           Our Midfree team helps you to connect better!
         </p>
-        <div class="absolute top-11 right-4 bg-blue-500 text-white rounded-full w-20 h-20 flex items-center justify-center border-2 border-white z-50">
+        <div class="absolute top-11 right-4 bg-blue-500 text-white rounded-full w-20 h-20 flex items-center justify-center border-2 border-white z-50 animate-scale" id="mentor-circle">
           <span class="text-sm font-bold text-white">mentors</span>
         </div>
+       
+       
+        
+        
         <a
           href="#"
           class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600"
@@ -75,7 +79,36 @@
        
       </div>
     </section>
-
+<!-- Mentors Details Popup -->
+<div id="mentors-details" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-96 max-w-sm">
+    <h2 class="text-2xl font-bold mb-4">Meet Our Mentors</h2>
+    <div class="space-y-4">
+      <div class="flex items-center space-x-4">
+        <img src="https://via.placeholder.com/50" alt="Mentor 1" class="w-16 h-16 rounded-full">
+        <div>
+          <h3 class="text-lg font-semibold">Mentor 1</h3>
+          <p>Expert in Psychology</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <img src="https://via.placeholder.com/50" alt="Mentor 2" class="w-16 h-16 rounded-full">
+        <div>
+          <h3 class="text-lg font-semibold">Mentor 2</h3>
+          <p>Career Coach</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <img src="https://via.placeholder.com/50" alt="Mentor 3" class="w-16 h-16 rounded-full">
+        <div>
+          <h3 class="text-lg font-semibold">Mentor 3</h3>
+          <p>Life Coach</p>
+        </div>
+      </div>
+    </div>
+    <button id="close-mentors" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Close</button>
+  </div>
+</div>
     <section class="bg-white py-12 px-4">
       <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="space-y-4">
@@ -288,6 +321,16 @@ document.getElementById('modal-form').addEventListener('submit', function (e) {
     alert('Thank you for booking a free mentorship session. We will get contact you soon .');
   }, 300); // Adjust the delay time if needed
 });
+
+
+document.getElementById('mentor-circle').addEventListener('click', function() {
+      document.getElementById('mentors-details').classList.remove('hidden');
+    });
+
+    document.getElementById('close-mentors').addEventListener('click', function() {
+      document.getElementById('mentors-details').classList.add('hidden');
+    });
+
 
     </script>
   </body>
